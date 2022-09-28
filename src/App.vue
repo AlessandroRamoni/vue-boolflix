@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       indirizzoApi:
-        "https://api.themoviedb.org/3/movie/550?api_key=a8d67339fa1940339138961de35a981e",
+        "https://api.themoviedb.org/3/search/movie?api_key=a8d67339fa1940339138961de35a981e&query=back",
     };
   },
   created() {
