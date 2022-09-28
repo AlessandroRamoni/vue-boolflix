@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent />
-    <MainComponent />
+    <MainComponent :insiemeDeiFilm="arrayAppoggio" />
   </div>
 </template>
 
@@ -16,6 +16,7 @@ export default {
     return {
       indirizzoApi:
         "https://api.themoviedb.org/3/search/movie?api_key=a8d67339fa1940339138961de35a981e&query=back",
+      arrayAppoggio: [],
     };
   },
   created() {
@@ -23,8 +24,10 @@ export default {
       .get(this.indirizzoApi)
       .then(({ status, data }) => {
         if (status === 200) {
-          this.arrayAppoggio = data;
           console.log(data);
+          this.arrayAppoggio = data.results;
+          console.log(this.arrayAppoggio);
+          // console.log(data);
         } else {
           console.log(status);
         }
@@ -47,7 +50,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #2c3e50;
+  height: 100vh;
 }
 </style>
