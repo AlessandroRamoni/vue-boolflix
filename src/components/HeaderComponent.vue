@@ -1,7 +1,7 @@
 <template>
   <header>
     <h2>Boolflix</h2>
-    <!-- <input type="text" v-model="searchText" @keyup.enter="doSearch()" /> -->
+    <input type="text" v-model="inputText" />
   </header>
 </template>
 
@@ -14,12 +14,19 @@ export default {
 <style lang="scss" scoped>
 header {
   background-color: rgb(2, 16, 80);
+  position: relative;
   h2 {
     color: darkseagreen;
     text-align: left;
     padding: 20px;
     font-size: 1.3em;
   }
+}
+input {
+  background-color: darkseagreen;
+  position: absolute;
+  right: 10px;
+  top: 20px;
 }
 </style>>
 
