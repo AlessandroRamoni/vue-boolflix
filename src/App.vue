@@ -6,12 +6,33 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import MainComponent from "@/components/MainComponent.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      indirizzoApi:
+        "https://api.themoviedb.org/3/movie/550?api_key=a8d67339fa1940339138961de35a981e",
+    };
+  },
+  created() {
+    axios
+      .get(this.indirizzoApi)
+      .then(({ status, data }) => {
+        if (status === 200) {
+          this.arrayAppoggio = data;
+          console.log(data);
+        } else {
+          console.log(status);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
   components: {
     HeaderComponent,
     MainComponent,
