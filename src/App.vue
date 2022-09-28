@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       indirizzoApi:
-        "https://api.themoviedb.org/3/trending/movie/week?api_key=a8d67339fa1940339138961de35a981e&query=back",
+        "https://api.themoviedb.org/3/trending/movie/week?api_key=a8d67339fa1940339138961de35a981e",
       arrayAppoggio: [],
     };
   },
