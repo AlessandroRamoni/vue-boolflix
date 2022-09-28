@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <MainComponent msg="Welcome to Your Vue.js App" />
+    <HeaderComponent />
+    <MainComponent />
   </div>
 </template>
 
 <script>
-import MainComponent from "./components/MainComponent.vue";
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import MainComponent from "@/components/MainComponent.vue";
 
 export default {
   name: "App",
   components: {
+    HeaderComponent,
     MainComponent,
   },
 };
