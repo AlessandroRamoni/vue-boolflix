@@ -2,12 +2,18 @@
   <header>
     <h2>Boolflix</h2>
     <input type="text" v-model="inputText" />
+    <button @click="$emit('ricerca', inputText)">CERCA</button>
   </header>
 </template>
 
 <script>
 export default {
   name: "HeaderComponent",
+  data() {
+    return {
+      inputText: "",
+    };
+  },
 };
 </script>
 

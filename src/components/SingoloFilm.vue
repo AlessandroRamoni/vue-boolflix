@@ -3,10 +3,10 @@
     <!-- "/icAG01wZyy1ZpS3UEnPReph3jMV.jpg" -->
     <!-- https://image.tmdb.org/t/p/w500/icAG01wZyy1ZpS3UEnPReph3jMV.jpg -->
     <img :src="'https://image.tmdb.org/t/p/w200' + poster" />
-    <h2>{{ titolo }}</h2>
-    <h4>{{ titoloOriginale }}</h4>
-    <h4>{{ lingua }}</h4>
-    <h5>{{ voto }}</h5>
+    <h2>Titolo: {{ titolo }}</h2>
+    <h4>Titolo originale: {{ titoloOriginale }}</h4>
+    <h4>Lingua: {{ lingua }}</h4>
+    <h5>Voto: {{ voto }}</h5>
   </div>
 </template>
 

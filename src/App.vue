@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderComponent />
-    <MainComponent :insiemeDeiFilm="arrayAppoggio" />
+    <HeaderComponent @ricerca="chooseMovie" />
+    <MainComponent :insiemeDeiFilm="movies" />
   </div>
 </template>
 
@@ -15,26 +15,30 @@ export default {
   data() {
     return {
       indirizzoApi:
-        "https://api.themoviedb.org/3/trending/movie/week?api_key=a8d67339fa1940339138961de35a981e",
-      arrayAppoggio: [],
+        "https://api.themoviedb.org/3/search/movie?api_key=a8d67339fa1940339138961de35a981e&language=it-IT&query=",
+      movies: [],
     };
   },
-  created() {
-    axios
-      .get(this.indirizzoApi)
-      .then(({ status, data }) => {
-        if (status === 200) {
-          console.log(data);
-          this.arrayAppoggio = data.results;
-          console.log(this.arrayAppoggio);
-          // console.log(data);
-        } else {
-          console.log(status);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  methods: {
+    chooseMovie(testoDaCercare) {
+      console.log(testoDaCercare);
+      const apiUrl = this.indirizzoApi + testoDaCercare;
+      axios
+        .get(apiUrl)
+        .then(({ status, data }) => {
+          if (status === 200) {
+            console.log(data);
+            this.movies = data.results;
+            console.log(this.movies);
+            // console.log(data);
+          } else {
+            console.log(status);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   components: {
     HeaderComponent,
