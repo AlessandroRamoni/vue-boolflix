@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComponent @ricerca="chooseMovie" />
+    <HeaderComponent @ricerca="chooseSerie" />
     <MainComponent :insiemeDeiFilm="movies" :insiemeDelleSerie="series" />
   </div>
 </template>

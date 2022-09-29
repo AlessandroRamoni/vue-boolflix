@@ -11,7 +11,17 @@
         :poster="copertina.poster_path"
       />
     </div>
-    <SingolaSerie />
+    <div>
+      <SingolaSerie
+        v-for="serieTv in insiemeDelleSerie"
+        :key="serieTv.id"
+        :titolo="serieTv.name"
+        :titoloOriginale="serieTv.original_name"
+        :lingua="serieTv.original_language"
+        :voto="serieTv.vote_average"
+        :poster="serieTv.poster_path"
+      />
+    </div>
   </div>
 </template>
 

@@ -33,7 +33,8 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-#bandiera
-  width: 20px
+<style scoped lang="scss">
+#container #bandiera {
+  width: 20px;
+}
 </style>
