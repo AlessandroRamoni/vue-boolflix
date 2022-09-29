@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// const immagine = 'https://flagicons.lipis.dev/flags/4x3/' + {{ lingua }} + '.svg'
 export default {
   name: "SingoloFilm",
   props: {
@@ -27,6 +26,9 @@ export default {
     titoloOriginale: String,
     lingua: String,
     voto: Number,
+  },
+  methods: {
+    getFlag() {},
   },
 };
 </script>

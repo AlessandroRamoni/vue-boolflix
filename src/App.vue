@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComponent @ricerca="chooseMovie" />
-    <MainComponent :insiemeDeiFilm="movies" />
+    <MainComponent :insiemeDeiFilm="movies" :insiemeDelleSerie="series" />
   </div>
 </template>
 
@@ -14,15 +14,19 @@ export default {
   name: "App",
   data() {
     return {
-      indirizzoApi:
+      indirizzoApiFilm:
         "https://api.themoviedb.org/3/search/movie?api_key=a8d67339fa1940339138961de35a981e&language=it-IT&query=",
+      indirizzoApiSerie:
+        "https://api.themoviedb.org/3/search/tv?api_key=a8d67339fa1940339138961de35a981e&language=it-IT&query=",
+
       movies: [],
+      series: [],
     };
   },
   methods: {
     chooseMovie(testoDaCercare) {
       console.log(testoDaCercare);
-      const indirizzoFinale = this.indirizzoApi + testoDaCercare;
+      const indirizzoFinale = this.indirizzoApiFilm + testoDaCercare;
       axios
         .get(indirizzoFinale)
         .then(({ status, data }) => {
@@ -39,7 +43,26 @@ export default {
           console.log(error);
         });
     },
+    chooseSerie(testoDaCercare) {
+      console.log(testoDaCercare);
+      const indirizzoFinaleSerie = this.indirizzoApiSerie + testoDaCercare;
+      axios
+        .get(indirizzoFinaleSerie)
+        .then(({ status, data }) => {
+          if (status === 200) {
+            console.log(data);
+            this.series = data.results;
+            console.log(this.series);
+          } else {
+            console.log(status);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
+
   components: {
     HeaderComponent,
     MainComponent,
