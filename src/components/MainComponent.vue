@@ -11,18 +11,22 @@
         :poster="copertina.poster_path"
       />
     </div>
+    <SingolaSerie />
   </div>
 </template>
 
 <script>
 import SingoloFilm from "@/components/SingoloFilm.vue";
+import SingolaSerie from "@/components/SingolaSerie.vue";
 export default {
   name: "MainComponent",
   props: {
     insiemeDeiFilm: Array,
+    insiemeDelleSerie: Array,
   },
   components: {
     SingoloFilm,
+    SingolaSerie,
   },
 };
 </script>
