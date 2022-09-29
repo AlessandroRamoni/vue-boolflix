@@ -1,11 +1,9 @@
 <template>
   <div>
     <div>
-      <!-- {{ copertina.original_title }}
-      {{ copertina.release_date }} -->
       <SingoloFilm
-        v-for="(copertina, index) in insiemeDeiFilm"
-        :key="index"
+        v-for="copertina in insiemeDeiFilm"
+        :key="copertina.id"
         :titolo="copertina.title"
         :titoloOriginale="copertina.original_title"
         :lingua="copertina.original_language"

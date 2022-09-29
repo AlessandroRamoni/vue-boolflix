@@ -22,9 +22,9 @@ export default {
   methods: {
     chooseMovie(testoDaCercare) {
       console.log(testoDaCercare);
-      const apiUrl = this.indirizzoApi + testoDaCercare;
+      const indirizzoFinale = this.indirizzoApi + testoDaCercare;
       axios
-        .get(apiUrl)
+        .get(indirizzoFinale)
         .then(({ status, data }) => {
           if (status === 200) {
             console.log(data);

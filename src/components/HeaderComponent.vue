@@ -27,12 +27,19 @@ header {
     padding: 20px;
     font-size: 1.3em;
   }
-}
-input {
-  background-color: darkseagreen;
-  position: absolute;
-  right: 10px;
-  top: 20px;
+  input {
+    background-color: darkseagreen;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+  }
+  button {
+    background-color: darkseagreen;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    color: #ffffff;
+  }
 }
 </style>>
 

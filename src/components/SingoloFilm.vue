@@ -5,12 +5,20 @@
     <img :src="'https://image.tmdb.org/t/p/w200' + poster" />
     <h2>Titolo: {{ titolo }}</h2>
     <h4>Titolo originale: {{ titoloOriginale }}</h4>
-    <h4>Lingua: {{ lingua }}</h4>
+    <h4>
+      Lingua:
+      <img
+        id="bandiera"
+        :src="'https://flagicons.lipis.dev/flags/4x3/' + lingua + '.svg'"
+        alt=""
+      />
+    </h4>
     <h5>Voto: {{ voto }}</h5>
   </div>
 </template>
 
 <script>
+// const immagine = 'https://flagicons.lipis.dev/flags/4x3/' + {{ lingua }} + '.svg'
 export default {
   name: "SingoloFilm",
   props: {
@@ -24,4 +32,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+#bandiera
+  width: 20px
 </style>
