@@ -28,7 +28,10 @@ export default {
     voto: Number,
   },
   methods: {
-    getFlag() {},
+    convertitoreVoto(voto) {
+      let votoConvertito = (voto * 5) / 10;
+      return votoConvertito;
+    },
   },
 };
 </script>
