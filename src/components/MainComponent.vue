@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div id="contenitore-film">
       <SingoloFilm
         v-for="copertina in insiemeDeiFilm"
         :key="copertina.id"
@@ -11,7 +11,7 @@
         :poster="copertina.poster_path"
       />
     </div>
-    <div>
+    <div id="contenitore-serie">
       <SingolaSerie
         v-for="serieTv in insiemeDelleSerie"
         :key="serieTv.id"
@@ -42,4 +42,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#contenitore-film,
+#contenitore-serie {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

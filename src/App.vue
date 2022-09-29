@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComponent @ricerca="chooseSerie" />
+    <HeaderComponent @ricerca="choose" />
     <MainComponent :insiemeDeiFilm="movies" :insiemeDelleSerie="series" />
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     };
   },
   methods: {
-    chooseMovie(testoDaCercare) {
+    choose(testoDaCercare) {
       console.log(testoDaCercare);
       const indirizzoFinale = this.indirizzoApiFilm + testoDaCercare;
       axios
@@ -42,9 +42,6 @@ export default {
         .catch((error) => {
           console.log(error);
         });
-    },
-    chooseSerie(testoDaCercare) {
-      console.log(testoDaCercare);
       const indirizzoFinaleSerie = this.indirizzoApiSerie + testoDaCercare;
       axios
         .get(indirizzoFinaleSerie)

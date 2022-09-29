@@ -34,7 +34,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#container #bandiera {
-  width: 20px;
+#container {
+  width: calc(100% / 5);
+  #bandiera {
+    width: 20px;
+  }
 }
 </style>
