@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     convertitoreVoto(voto) {
-      let votoConvertito = Math.ceil((voto * 5) / 10);
+      let votoConvertito = Math.floor((voto * 5) / 10) + 1;
       return votoConvertito;
     },
   },

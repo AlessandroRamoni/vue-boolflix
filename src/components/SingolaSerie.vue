@@ -26,8 +26,8 @@ export default {
     voto: Number,
   },
   methods: {
-    convertitoreVoto(voto) {
-      let votoConvertito = Math.ceil((voto * 5) / 10);
+    convertitoreVoto(numeroDaConvertire) {
+      let votoConvertito = Math.floor((numeroDaConvertire * 5) / 10) + 1;
       return votoConvertito;
     },
   },
