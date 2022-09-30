@@ -33,6 +33,7 @@ export default {
   props: {
     insiemeDeiFilm: Array,
     insiemeDelleSerie: Array,
+    // icone: String,
   },
   components: {
     SingoloFilm,

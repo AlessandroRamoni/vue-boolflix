@@ -1,17 +1,19 @@
 <template>
   <div id="container">
     <img :src="'https://image.tmdb.org/t/p/w200' + poster" />
-    <h2>Titolo: {{ titolo }}</h2>
-    <h4>Titolo originale: {{ titoloOriginale }}</h4>
-    <h4>
-      Lingua:
-      <img
-        id="bandiera"
-        :src="'https://flagicons.lipis.dev/flags/4x3/' + lingua + '.svg'"
-        alt=""
-      />
-    </h4>
-    <h5>Voto: {{ convertitoreVoto(voto) }}</h5>
+    <div id="info-serie">
+      <h2>Titolo: {{ titolo }}</h2>
+      <h4>Titolo originale: {{ titoloOriginale }}</h4>
+      <h4>
+        Lingua:
+        <img
+          id="bandiera"
+          :src="'https://flagicons.lipis.dev/flags/4x3/' + lingua + '.svg'"
+          alt=""
+        />
+      </h4>
+      <h5>Voto: {{ convertitoreVoto(voto) }}</h5>
+    </div>
   </div>
 </template>
 
@@ -37,7 +39,14 @@ export default {
 <style scoped lang="scss">
 #container {
   width: calc(100% / 5);
+  padding: 20px;
   background-color: #305c88;
+  // #info-serie {
+  //   display: none;
+  // }
+  :hover {
+    cursor: pointer;
+  }
 }
 #bandiera {
   width: 20px;

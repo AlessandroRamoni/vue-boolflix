@@ -41,10 +41,12 @@ header {
     padding: 5px;
     color: #ffffff;
     cursor: pointer;
+    font-size: 0.8em;
   }
 }
 #contenitore-bottone {
   display: flex;
+  margin-right: 10px;
 }
 #contenitore-bottone input {
   margin-right: 10px;
