@@ -1,7 +1,5 @@
 <template>
   <div id="container">
-    <!-- "/icAG01wZyy1ZpS3UEnPReph3jMV.jpg" -->
-    <!-- https://image.tmdb.org/t/p/w500/icAG01wZyy1ZpS3UEnPReph3jMV.jpg -->
     <img :src="'https://image.tmdb.org/t/p/w200' + poster" />
     <h2>Titolo: {{ titolo }}</h2>
     <h4>Titolo originale: {{ titoloOriginale }}</h4>
@@ -43,4 +41,11 @@ export default {
     width: 20px;
   }
 }
+// h1 {
+//   text-align: left;
+//   color: #ffffff;
+//   font-size: 2em;
+//   padding: 20px;
+//   padding-left: 0px;
+// }
 </style>

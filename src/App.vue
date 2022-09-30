@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <font-awesome-icon icon="fa-regular fa-star" />
     <HeaderComponent @ricerca="choose" />
     <MainComponent :insiemeDeiFilm="movies" :insiemeDelleSerie="series" />
   </div>

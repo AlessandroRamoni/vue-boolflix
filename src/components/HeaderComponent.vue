@@ -1,8 +1,10 @@
 <template>
   <header>
     <h2>Boolflix</h2>
-    <input type="text" v-model="inputText" />
-    <button @click="$emit('ricerca', inputText)">CERCA</button>
+    <div id="contenitore-bottone">
+      <input type="text" v-model="inputText" />
+      <button @click="$emit('ricerca', inputText)">CERCA</button>
+    </div>
   </header>
 </template>
 
@@ -20,7 +22,9 @@ export default {
 <style lang="scss" scoped>
 header {
   background-color: rgb(2, 16, 80);
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   h2 {
     color: darkseagreen;
     text-align: left;
@@ -29,17 +33,21 @@ header {
   }
   input {
     background-color: darkseagreen;
-    position: absolute;
-    right: 10px;
-    top: 20px;
+    height: 25px;
   }
   button {
     background-color: darkseagreen;
-    position: absolute;
-    right: 10px;
-    bottom: 5px;
+    height: 25px;
+    padding: 5px;
     color: #ffffff;
+    cursor: pointer;
   }
+}
+#contenitore-bottone {
+  display: flex;
+}
+#contenitore-bottone input {
+  margin-right: 10px;
 }
 </style>>
 

@@ -42,4 +42,11 @@ export default {
 #bandiera {
   width: 20px;
 }
+// h1 {
+//   text-align: left;
+//   color: #ffffff;
+//   font-size: 2em;
+//   padding: 20px;
+//   padding-left: 0px;
+// }
 </style>
