@@ -13,7 +13,7 @@
         alt=""
       />
     </h4>
-    <h5>Voto: {{ voto }}</h5>
+    <h5>Voto: {{ convertitoreVoto(voto) }}</h5>
   </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     convertitoreVoto(voto) {
-      let votoConvertito = (voto * 5) / 10;
+      let votoConvertito = Math.ceil((voto * 5) / 10);
       return votoConvertito;
     },
   },
