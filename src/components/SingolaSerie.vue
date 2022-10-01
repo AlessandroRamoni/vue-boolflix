@@ -12,7 +12,19 @@
           alt=""
         />
       </h4>
-      <h5>Voto: {{ convertitoreVoto(voto) }}</h5>
+      <h5>
+        Voto:
+        <div id="stelline">
+          <font-awesome-icon
+            v-for="n in 5"
+            :key="n"
+            :icon="[
+              n <= convertitoreVoto(voto) ? 'fa-solid' : 'fa-regular',
+              'fa-star',
+            ]"
+          />
+        </div>
+      </h5>
     </div>
   </div>
 </template>
@@ -44,6 +56,9 @@ export default {
   // #info-serie {
   //   display: none;
   // }
+  #stelline {
+    color: gold;
+  }
   :hover {
     cursor: pointer;
   }

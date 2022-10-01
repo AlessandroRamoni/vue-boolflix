@@ -14,14 +14,16 @@
       </h4>
       <h5>
         Voto:
-        <font-awesome-icon
-          v-for="n in 5"
-          :key="n"
-          :icon="[
-            n <= convertitoreVoto(voto) ? 'fa-solid' : 'fa-regular',
-            'fa-star',
-          ]"
-        />
+        <div id="stelline">
+          <font-awesome-icon
+            v-for="n in 5"
+            :key="n"
+            :icon="[
+              n <= convertitoreVoto(voto) ? 'fa-solid' : 'fa-regular',
+              'fa-star',
+            ]"
+          />
+        </div>
         <!-- <i
           v-for="n in 5"
           :key="n"
@@ -110,6 +112,9 @@ export default {
   // #info-film {
   //   display: none;
   // }
+  #stelline {
+    color: gold;
+  }
   :hover {
     cursor: pointer;
   }
