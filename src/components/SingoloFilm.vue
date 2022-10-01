@@ -1,9 +1,12 @@
 <template>
   <div id="container">
-    <img :src="'https://image.tmdb.org/t/p/w200' + poster" />
+    <div id="copertina">
+      <img :src="'https://image.tmdb.org/t/p/w342' + poster" />
+    </div>
     <div id="info-film">
       <h2>Titolo: {{ titolo }}</h2>
       <h4>Titolo originale: {{ titoloOriginale }}</h4>
+      <p>Sinossi: {{ sinossi }}</p>
       <h4>
         Lingua:
         <img
@@ -24,12 +27,7 @@
             ]"
           />
         </div>
-        <!-- <i
-          v-for="n in 5"
-          :key="n"
-          class="fa-star"
-          :class="n <= convertitoreVoto(voto) ? 'fa-regular' : 'fa-solid'"
-        ></i> -->
+        <!-- {{ convertitoreStelle(convertitoreVoto(voto)) }} -->
       </h5>
     </div>
   </div>
@@ -44,6 +42,7 @@ export default {
     titoloOriginale: String,
     lingua: String,
     voto: Number,
+    sinossi: String,
   },
   methods: {
     convertitoreVoto(voto) {
@@ -97,7 +96,7 @@ export default {
       }
       return stelline;
     },
-    */
+*/
   },
 };
 </script>
@@ -106,24 +105,32 @@ export default {
 #container {
   width: calc(100% / 5);
   padding: 20px;
+  position: relative;
   #bandiera {
     width: 20px;
   }
-  // #info-film {
-  //   display: none;
-  // }
+  #info-film {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: brown;
+    height: 344px;
+    width: 230px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 0.7em;
+    border: 1px solid white;
+    padding: 5px;
+    background-color: black;
+    color: #ffffff;
+  }
   #stelline {
     color: gold;
   }
-  :hover {
+  #info-film:hover {
+    opacity: 1;
     cursor: pointer;
   }
 }
-// h1 {
-//   text-align: left;
-//   color: #ffffff;
-//   font-size: 2em;
-//   padding: 20px;
-//   padding-left: 0px;
-// }
 </style>

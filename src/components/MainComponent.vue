@@ -9,6 +9,7 @@
         :lingua="copertina.original_language"
         :voto="copertina.vote_average"
         :poster="copertina.poster_path"
+        :sinossi="copertina.overview"
       />
     </div>
     <div id="contenitore-serie">
@@ -20,6 +21,7 @@
         :lingua="serieTv.original_language"
         :voto="serieTv.vote_average"
         :poster="serieTv.poster_path"
+        :sinossi="serieTv.overview"
       />
     </div>
   </div>
@@ -33,7 +35,6 @@ export default {
   props: {
     insiemeDeiFilm: Array,
     insiemeDelleSerie: Array,
-    // icone: String,
   },
   components: {
     SingoloFilm,
@@ -47,5 +48,8 @@ export default {
 #contenitore-serie {
   display: flex;
   flex-wrap: wrap;
+}
+#contenitore-film {
+  background-color: #2c3e50;
 }
 </style>

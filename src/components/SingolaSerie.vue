@@ -1,9 +1,10 @@
 <template>
   <div id="container">
-    <img :src="'https://image.tmdb.org/t/p/w200' + poster" />
+    <img :src="'https://image.tmdb.org/t/p/w342' + poster" />
     <div id="info-serie">
       <h2>Titolo: {{ titolo }}</h2>
       <h4>Titolo originale: {{ titoloOriginale }}</h4>
+      <p>Sinossi: {{ sinossi }}</p>
       <h4>
         Lingua:
         <img
@@ -38,6 +39,7 @@ export default {
     titoloOriginale: String,
     lingua: String,
     voto: Number,
+    sinossi: String,
   },
   methods: {
     convertitoreVoto(numeroDaConvertire) {
