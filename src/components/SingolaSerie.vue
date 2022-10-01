@@ -1,6 +1,8 @@
 <template>
   <div id="container">
-    <img :src="'https://image.tmdb.org/t/p/w342' + poster" />
+    <div id="copertina">
+      <img :src="'https://image.tmdb.org/t/p/w342' + poster" />
+    </div>
     <div id="info-serie">
       <h2>Titolo: {{ titolo }}</h2>
       <h4>Titolo originale: {{ titoloOriginale }}</h4>
@@ -55,24 +57,32 @@ export default {
   width: calc(100% / 5);
   padding: 20px;
   background-color: #305c88;
-  // #info-serie {
-  //   display: none;
-  // }
+  position: relative;
+  #info-serie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: brown;
+    height: 344px;
+    width: 230px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 0.7em;
+    border: 1px solid white;
+    padding: 5px;
+    background-color: black;
+    color: #ffffff;
+  }
+  #info-serie:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+  #bandiera {
+    width: 20px;
+  }
   #stelline {
     color: gold;
   }
-  :hover {
-    cursor: pointer;
-  }
 }
-#bandiera {
-  width: 20px;
-}
-// h1 {
-//   text-align: left;
-//   color: #ffffff;
-//   font-size: 2em;
-//   padding: 20px;
-//   padding-left: 0px;
-// }
 </style>
