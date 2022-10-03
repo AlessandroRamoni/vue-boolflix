@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <h1>Film</h1> -->
     <div id="contenitore-film">
       <SingoloFilm
         v-for="copertina in insiemeDeiFilm"
@@ -12,6 +13,7 @@
         :sinossi="copertina.overview"
       />
     </div>
+    <!-- <h1 id="serieTv">Serie TV</h1> -->
     <div id="contenitore-serie">
       <SingolaSerie
         v-for="serieTv in insiemeDelleSerie"
@@ -51,5 +53,13 @@ export default {
 }
 #contenitore-film {
   background-color: #2c3e50;
+}
+h1 {
+  color: gold;
+  font-size: 1.3em;
+  padding-top: 15px;
+}
+#serieTv {
+  background-color: #305c88;
 }
 </style>

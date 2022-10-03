@@ -2,7 +2,11 @@
   <header>
     <h2>Boolflix</h2>
     <div id="contenitore-bottone">
-      <input type="text" v-model="inputText" />
+      <input
+        type="text"
+        v-model="inputText"
+        @keyup.enter="$emit('ricerca', inputText)"
+      />
       <button @click="$emit('ricerca', inputText)">CERCA</button>
     </div>
   </header>
