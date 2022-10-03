@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <div id="copertina">
-      <img :src="'https://image.tmdb.org/t/p/w342' + poster" />
+      <img :src="getImage(poster)" />
     </div>
     <div id="info-serie">
       <h2>Titolo: {{ titolo }}</h2>
@@ -61,6 +61,15 @@ export default {
       }
       return `https://flagicons.lipis.dev/flags/1x1/${paese}.svg`;
     },
+    getImage(parametro) {
+      let fileNotFound =
+        "https://thumbs.dreamstime.com/b/error-page-funny-spider-inside-phone-error-page-funny-spider-inside-phone-display-spider-says-sorry-page-not-found-page-161850445.jpg";
+      if (parametro === null) {
+        parametro = fileNotFound;
+        return fileNotFound;
+      }
+      return `https://image.tmdb.org/t/p/w342${parametro}`;
+    },
   },
 };
 </script>
@@ -84,7 +93,7 @@ export default {
     font-size: 0.9em;
     border: 1px solid white;
     padding: 5px;
-    background-color: black;
+    background-color: rgb(2, 16, 80);
     color: #ffffff;
     overflow: auto;
   }
