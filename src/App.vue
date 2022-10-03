@@ -13,7 +13,11 @@
       <font-awesome-icon icon="fa-solid fa-star" />
     </div>
     <HeaderComponent @ricerca="choose" />
-    <MainComponent :insiemeDeiFilm="movies" :insiemeDelleSerie="series" />
+    <MainComponent
+      :insiemeDeiFilm="movies"
+      :insiemeDelleSerie="series"
+      :filmInInglese="englishFilms"
+    />
   </div>
 </template>
 
@@ -30,9 +34,12 @@ export default {
         "https://api.themoviedb.org/3/search/movie?api_key=a8d67339fa1940339138961de35a981e&language=it-IT&query=",
       indirizzoApiSerie:
         "https://api.themoviedb.org/3/search/tv?api_key=a8d67339fa1940339138961de35a981e&language=it-IT&query=",
+      indirizzoApiEnglishFilms:
+        "https://api.themoviedb.org/3/search/movie?api_key=a8d67339fa1940339138961de35a981e&language=en-US&query=",
 
       movies: [],
       series: [],
+      englishFilms: [],
     };
   },
   methods: {
@@ -62,6 +69,23 @@ export default {
             console.log(data);
             this.series = data.results;
             console.log(this.series);
+          } else {
+            console.log(status);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      const indirizzoFinaleEnglishFilms =
+        this.indirizzoApiEnglishFilms + testoDaCercare;
+      axios
+        .get(indirizzoFinaleEnglishFilms)
+        .then(({ status, data }) => {
+          if (status === 200) {
+            console.log(data);
+            this.englishFilms = data.results;
+            console.log(this.englishFilms);
+            // console.log(data);
           } else {
             console.log(status);
           }

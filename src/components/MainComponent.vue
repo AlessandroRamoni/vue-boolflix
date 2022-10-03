@@ -26,32 +26,49 @@
         :sinossi="serieTv.overview"
       />
     </div>
+    <div id="contenitore-trending">
+      <TrendingFilm
+        v-for="film in filmInInglese"
+        :key="film.id"
+        :titolo="film.title"
+        :titoloOriginale="film.original_title"
+        :lingua="film.original_language"
+        :voto="film.vote_average"
+        :poster="film.poster_path"
+        :sinossi="film.overview"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import SingoloFilm from "@/components/SingoloFilm.vue";
 import SingolaSerie from "@/components/SingolaSerie.vue";
+import TrendingFilm from "@/components/TrendingFilm.vue";
 export default {
   name: "MainComponent",
   props: {
     insiemeDeiFilm: Array,
     insiemeDelleSerie: Array,
+    filmInInglese: Array,
   },
   components: {
     SingoloFilm,
     SingolaSerie,
+    TrendingFilm,
   },
 };
 </script>
 
 <style scoped lang="scss">
 #contenitore-film,
-#contenitore-serie {
+#contenitore-serie,
+#contenitore-trending {
   display: flex;
   flex-wrap: wrap;
 }
-#contenitore-film {
+#contenitore-film,
+#contenitore-trending {
   background-color: #2c3e50;
 }
 h1 {
