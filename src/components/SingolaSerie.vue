@@ -9,11 +9,7 @@
       <p>Sinossi: {{ sinossi }}</p>
       <h4>
         Lingua:
-        <img
-          id="bandiera"
-          :src="'https://flagicons.lipis.dev/flags/4x3/' + lingua + '.svg'"
-          alt=""
-        />
+        <img id="bandiera" :src="getFlags(lingua)" alt="" />
       </h4>
       <h5>
         Voto:
@@ -48,6 +44,23 @@ export default {
       let votoConvertito = Math.floor((numeroDaConvertire * 5) / 10) + 1;
       return votoConvertito;
     },
+    getFlags(paese) {
+      switch (paese) {
+        case "en": {
+          paese = "gb";
+          break;
+        }
+        case "ja": {
+          paese = "jp";
+          break;
+        }
+        case "ko": {
+          paese = "kr";
+          break;
+        }
+      }
+      return `https://flagicons.lipis.dev/flags/1x1/${paese}.svg`;
+    },
   },
 };
 </script>
@@ -68,7 +81,7 @@ export default {
     width: 230px;
     margin-left: 20px;
     margin-top: 20px;
-    font-size: 0.7em;
+    font-size: 0.9em;
     border: 1px solid white;
     padding: 5px;
     background-color: black;
