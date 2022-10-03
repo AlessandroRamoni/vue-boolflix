@@ -59,6 +59,10 @@ export default {
           paese = "kr";
           break;
         }
+        case "zh": {
+          paese = "cn";
+          break;
+        }
       }
       return `https://flagicons.lipis.dev/flags/1x1/${paese}.svg`;
     },
@@ -128,6 +132,14 @@ export default {
   width: calc(100% / 5);
   padding: 20px;
   position: relative;
+  #copertina {
+    border: 2px solid black;
+  }
+  #copertina img {
+    display: block;
+    width: 230px;
+    height: 340px;
+  }
   #bandiera {
     width: 20px;
   }
@@ -138,7 +150,7 @@ export default {
     opacity: 0;
     background-color: brown;
     height: 344px;
-    width: 230px;
+    max-width: 230px;
     margin-left: 20px;
     margin-top: 20px;
     font-size: 0.9em;

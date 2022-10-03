@@ -58,6 +58,10 @@ export default {
           paese = "kr";
           break;
         }
+        case "zh": {
+          paese = "cn";
+          break;
+        }
       }
       return `https://flagicons.lipis.dev/flags/1x1/${paese}.svg`;
     },
@@ -80,6 +84,14 @@ export default {
   padding: 20px;
   background-color: #305c88;
   position: relative;
+  #copertina {
+    border: 2px solid black;
+  }
+  #copertina img {
+    display: block;
+    width: 230px;
+    height: 340px;
+  }
   #info-serie {
     position: absolute;
     top: 0;
@@ -96,6 +108,7 @@ export default {
     background-color: rgb(2, 16, 80);
     color: #ffffff;
     overflow: auto;
+    max-width: 230px;
   }
   #info-serie:hover {
     cursor: pointer;
