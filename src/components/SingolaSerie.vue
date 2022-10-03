@@ -73,6 +73,7 @@ export default {
     padding: 5px;
     background-color: black;
     color: #ffffff;
+    overflow: auto;
   }
   #info-serie:hover {
     cursor: pointer;
