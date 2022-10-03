@@ -4,21 +4,21 @@
       <img :src="getImage(poster)" />
     </div>
     <div id="info-film">
-      <h2>Titolo: {{ titolo }}</h2>
-      <h4>Titolo originale: {{ titoloOriginale }}</h4>
-      <p>Sinossi: {{ sinossi }}</p>
+      <h2>Title: {{ title }}</h2>
+      <h4>Original title: {{ originalTitle }}</h4>
+      <p>Overview: {{ overview }}</p>
       <h4 id="lingua">
-        Lingua:
-        <img id="bandiera" :src="getFlags(lingua)" alt="" />
+        Language:
+        <img id="bandiera" :src="getFlags(language)" alt="" />
       </h4>
       <h5>
-        Voto:
+        Vote:
         <div id="stelline">
           <font-awesome-icon
             v-for="n in 5"
             :key="n"
             :icon="[
-              n <= convertitoreVoto(voto) ? 'fa-solid' : 'fa-regular',
+              n <= convertitoreVoto(vote) ? 'fa-solid' : 'fa-regular',
               'fa-star',
             ]"
           />
@@ -31,14 +31,14 @@
 
 <script>
 export default {
-  name: "TrendingFilm",
+  name: "EnglishFilms",
   props: {
-    titolo: String,
+    title: String,
     poster: String,
-    titoloOriginale: String,
-    lingua: String,
-    voto: Number,
-    sinossi: String,
+    originalTitle: String,
+    language: String,
+    vote: Number,
+    overview: String,
   },
   methods: {
     convertitoreVoto(voto) {

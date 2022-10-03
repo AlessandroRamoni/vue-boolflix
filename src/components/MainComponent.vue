@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <h1>Film</h1> -->
     <div id="contenitore-film">
       <SingoloFilm
         v-for="copertina in insiemeDeiFilm"
@@ -13,7 +12,6 @@
         :sinossi="copertina.overview"
       />
     </div>
-    <!-- <h1 id="serieTv">Serie TV</h1> -->
     <div id="contenitore-serie">
       <SingolaSerie
         v-for="serieTv in insiemeDelleSerie"
@@ -27,15 +25,15 @@
       />
     </div>
     <div id="contenitore-trending">
-      <TrendingFilm
+      <EnglishFilms
         v-for="film in filmInInglese"
         :key="film.id"
-        :titolo="film.title"
-        :titoloOriginale="film.original_title"
-        :lingua="film.original_language"
-        :voto="film.vote_average"
+        :title="film.title"
+        :originalTitle="film.original_title"
+        :language="film.original_language"
+        :vote="film.vote_average"
         :poster="film.poster_path"
-        :sinossi="film.overview"
+        :overview="film.overview"
       />
     </div>
   </div>
@@ -44,7 +42,7 @@
 <script>
 import SingoloFilm from "@/components/SingoloFilm.vue";
 import SingolaSerie from "@/components/SingolaSerie.vue";
-import TrendingFilm from "@/components/TrendingFilm.vue";
+import EnglishFilms from "@/components/EnglishFilms.vue";
 export default {
   name: "MainComponent",
   props: {
@@ -55,7 +53,7 @@ export default {
   components: {
     SingoloFilm,
     SingolaSerie,
-    TrendingFilm,
+    EnglishFilms,
   },
 };
 </script>
@@ -71,11 +69,7 @@ export default {
 #contenitore-trending {
   background-color: #2c3e50;
 }
-h1 {
-  color: gold;
-  font-size: 1.3em;
-  padding-top: 15px;
-}
+
 #serieTv {
   background-color: #305c88;
 }

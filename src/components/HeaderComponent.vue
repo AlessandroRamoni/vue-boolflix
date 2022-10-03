@@ -51,6 +51,10 @@ header {
 #contenitore-bottone {
   display: flex;
   margin-right: 10px;
+  text-align: left;
+  button {
+    color: black;
+  }
 }
 #contenitore-bottone input {
   margin-right: 10px;

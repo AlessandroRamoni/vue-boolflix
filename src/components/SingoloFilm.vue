@@ -142,6 +142,7 @@ export default {
   }
   #bandiera {
     width: 20px;
+    height: 15px;
   }
   #info-film {
     position: absolute;
